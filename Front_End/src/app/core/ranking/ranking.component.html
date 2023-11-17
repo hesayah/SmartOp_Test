@@ -1,0 +1,30 @@
+<section>
+    <div class="search-bar">
+      <input [(ngModel)]="searchQuery" (input)="searchSurgeons()" placeholder="Rechercher" />
+    </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Spécialité</th>
+            <th>Interventions</th>
+            <th>Anesthésiste Favori</th>
+            <th>Infirmière Favorite</th>
+            <th>Salle la Plus Fréquente</th>
+            <th>Acte le Plus Fréquent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chirurgien of surgeons" (scroll)="onScroll()">
+            <td>{{ chirurgien.nom }}</td>
+            <td>{{ chirurgien.specialite }}</td>
+            <td>{{ chirurgien.interventions }}</td>
+            <td>{{ chirurgien.anesthesisteFavori }}</td>
+            <td>{{ chirurgien.infirmiereFavorite }}</td>
+            <td>{{ chirurgien.sallePlusFrequente }}</td>
+            <td>{{ chirurgien.actePlusFrequent }}</td>
+          </tr>
+        </tbody>
+    </table>
+</section>
+  
